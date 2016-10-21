@@ -51,7 +51,7 @@ parse_args()
 get_typhoon_singal()
 {
 	# use egrep since Mac does not use GNU grep, i.e. no grep -o
-	typhoon_singal=`curl -s $HKO_WEB | grep 'images_e/tc[0-9]\+.gif' | egrep -o 'tc[0-9]+'`
+	typhoon_singal=`curl -s $HKO_WEB | grep 'images_e/tc[0-9]\+.gif\|images_e/tc8[a-z]\{2\}.gif' | egrep -o 'tc[0-9]+'`
 	signal_no=`echo $typhoon_singal | egrep -o '[0-9]+'`
 }
 
